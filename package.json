@@ -1,0 +1,25 @@
+{
+  "name": "standard",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Repo to consolidate web standards tracks, recording agreements, actions and timescales",
+  "license": "None",
+  "author": "choile@roku.com",
+  "type": "module",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "build": "cd docs && pnpm run build",
+    "start": "export PORT=8783 && cd docs/out && echo \"Launching server on http://localhost:${PORT}/standard\" && python3 -m http.server ${PORT} > /dev/null"
+  },
+  "devDependencies": {
+    "@changesets/changelog-git": "^0.2.0",
+    "@changesets/cli": "^2.27.3",
+    "eslint": "^9",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "prettier": "^3.4.2"
+  },
+  "packageManager": "pnpm@10.1.0",
+  "engines": {
+    "node": ">=22"
+  }
+}
