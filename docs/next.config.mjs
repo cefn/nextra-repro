@@ -1,17 +1,19 @@
-import type { NextConfig } from "next";
+/**
+ * @typedef {import("next").NextConfig} NextConfig
+ */
 
 import nextra from "nextra";
 
-const BASE_PATH = process.env.BASE_PATH ?? "/standard";
+const BASE_PATH = process.env.BASE_PATH || "/standard";
 
 const createNextraConfig = nextra({});
 
-// You can include other Next.js configuration options here, in addition to Nextra settings:
-const nextConfig: NextConfig = createNextraConfig({
+/** @type {NextConfig} */
+const nextConfig = createNextraConfig({
   output: "export",
   basePath: BASE_PATH,
   assetPrefix: BASE_PATH,
-  distDir: "out",
+  distDir: "out/standard",
   trailingSlash: true,
   webpack: (config) => {
     config.target = "node22";
